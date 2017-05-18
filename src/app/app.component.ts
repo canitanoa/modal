@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AliasComponent } from "app/alias/alias.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  muestra:boolean = false;
+
+  @ViewChild('modalAlias') modalAlias : AliasComponent;
+
+  constructor() { }
+  
+  showALiasModal(){
+    this.modalAlias.show();
+  }
+
 }
